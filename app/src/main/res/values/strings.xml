@@ -21,4 +21,18 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="etEmail">Email/Login</string>
+    <string name="etPassword">Password</string>
+    <string name="login_title">LOGIN</string>
+    <string name="send_password_reset_email">Send password reset email</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="create_act">Create Account</string>
+
+    <string name="Pusta_rejestracja">Login i hasło nie mogą być puste</string>
+
+    <string name="LoginFailed">Błędny login lub hasło</string>
+    <string name="uz_istnieje">Podany login jest zajety!</string>
+    <string name="DataBase_failure">Błąd bazy danych!</string>
+    <string name="rejestracja">User registered</string>
 </resources>

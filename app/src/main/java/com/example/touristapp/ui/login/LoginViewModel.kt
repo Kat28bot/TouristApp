@@ -46,7 +46,7 @@ class  LoginViewModel(private val loginRepository: LoginRepository) : ViewModel(
         } else {
             username.isNotBlank()
         }
-       // return  username.isNotBlank()
+       // return  user-+name.isNotBlank()
     }
 
     // A placeholder password validation check

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "875675679281",
+    "firebase_url": "https://enduring-branch-283413.firebaseio.com",
+    "project_id": "enduring-branch-283413",
+    "storage_bucket": "enduring-branch-283413.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875675679281:android:d5fc5a1b4399ece3143310",
+        "android_client_info": {
+          "package_name": "com.example.touristapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "875675679281-l4jsgr9dp1tdcv4lbo39kdjb7is32qhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHIYRVmyPn6pG7e3gkyH1shut9TRGC7aQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "875675679281-l4jsgr9dp1tdcv4lbo39kdjb7is32qhe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
