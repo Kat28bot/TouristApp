@@ -68,7 +68,7 @@ class CreateAccountActivity : AppCompatActivity() {
                 ).show()
             }
             else {
-                sendHtmlEmail()
+                //sendHtmlEmail()
 
                 val fbdb = DatabaseHandler()
                 fbdb.checkIfUserExistsAndRegister(
@@ -127,15 +127,6 @@ class CreateAccountActivity : AppCompatActivity() {
             }
         })
 
-    }
-
-    fun sendHtmlEmail() {
-        val mailId = "yourmail@gmail.com"
-        val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", mailId, null))
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject text here")
-        emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml("<p><b>Some Content</b></p>" +
-                "http://www.google.com" + "<small><p>More content</p></small>"))
-        startActivity(Intent.createChooser(emailIntent, "Send email..."))
     }
 
     private fun registerUser(){

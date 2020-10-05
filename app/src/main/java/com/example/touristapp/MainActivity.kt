@@ -1,17 +1,13 @@
 package com.example.touristapp
 
-import android.R.layout
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.net.sip.SipSession
 import android.os.Bundle
 import android.util.Log
-import android.view.*
-import android.widget.FrameLayout
-import android.widget.LinearLayout
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.View
+import android.view.ViewGroup
 import android.widget.PopupWindow
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -21,6 +17,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.touristapp.ui.home.HomeFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
@@ -32,6 +29,7 @@ class MainActivity : AppCompatActivity()
 
     private lateinit var appBarConfiguration: AppBarConfiguration
    var blazenOn:Boolean = false
+    lateinit var user:User
 
 
     @SuppressLint("ResourceType")
@@ -40,6 +38,17 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        user = intent.getSerializableExtra("User") as User
+
+        if (savedInstanceState == null) {
+            // During initial setup, plug in the details fragment.
+            val details = HomeFragment()
+            details.setArguments(intent.extras)
+            supportFragmentManager.beginTransaction().add(
+                android.R.id.content, details
+            ).commit()
+        }
 
         val layoutInflater = baseContext
             .getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -60,11 +69,11 @@ class MainActivity : AppCompatActivity()
             }else{
                 blazenOn=true
                 Log.i("blazen","blazen turnOn")
-
+                val hf=HomeFragment()
+               // hf.showPopUp(popupWindow)
                 popupWindow.showAsDropDown(toolbar, 50, -500);
 
             }
-
 
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
@@ -76,15 +85,6 @@ class MainActivity : AppCompatActivity()
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-    }
-
-    fun showPopUp(){
-    val fabula1= Dialog(this)
-        fabula1.setCancelable(true)
-        fabula1.setCanceledOnTouchOutside(true)
-        fabula1.setContentView(R.layout.bubble)
-       // fabula1.window?.setBackgroundDrawable(ColorDrawable(T))
-        blazenOn=true
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

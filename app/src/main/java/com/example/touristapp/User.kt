@@ -37,6 +37,10 @@ class User : Serializable{
         this.password = password
         this.eMail = coordinates
         this.coordinates=""
+        this.placesDone=ArrayList<Int>()
+        placesDone!!.add(0)
+        this.placesUndone=ArrayList<Int>()
+        placesUndone!!.add(0)
     }
     fun User(login:String?,password:String?) {
         this.login=login

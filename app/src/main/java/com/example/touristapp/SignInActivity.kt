@@ -61,7 +61,7 @@ class SignInActivity : AppCompatActivity() {
                             //fbdb.user.eMail
                             // Toast.makeText(getApplicationContext(),R.string.LogIn,Toast.LENGTH_SHORT).show();
                             val MainPageIntent = Intent(this@SignInActivity, MainActivity::class.java)
-                            sendHtmlEmail(fbdb.user.eMail.toString())
+                            //sendHtmlEmail(fbdb.user.eMail.toString())
                             MainPageIntent.putExtra("User", fbdb.user)
                             Log.i("logIn","dataExsists : intent")
                             //haveAccountDialog.dismiss()
@@ -90,14 +90,7 @@ class SignInActivity : AppCompatActivity() {
     }
     }
 
-    fun sendHtmlEmail(email:String) {
-        val mailId = "yourmail@gmail.com"
-        val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", email, null))
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject text here")
-        emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml("<p><b>Some Content</b></p>" +
-                "http://www.google.com" + "<small><p>More content</p></small>"))
-        startActivity(Intent.createChooser(emailIntent, "Send email..."))
-    }
+
 
 fun signIn(){
     fun onClick(view: View?) {
